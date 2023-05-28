@@ -27,15 +27,15 @@ async def process_help_command(message: types.Message):
                            reply_markup=kb_day)  # создал клавиатуру ночного
 
 
-@dp.message_handler(text='Night checklist')
+@dp.message_handler(text='Ночной чеклист')
 async def process_help_command(message: types.Message):
     document = open("Files/Night Auditor.pdf", "rb")
     await bot.send_document(message.from_user.id, document=document)
 
 
-@dp.message_handler(text='Создание брони и заселение')
+@dp.message_handler(text='Создание брони')
 async def process_help_command(message: types.Message):
-    document = open("Files/Заселение.pdf", "rb")
+    document = open("Files/Создание брони.pdf", "rb")
     await bot.send_document(message.from_user.id, document=document)
 
 
@@ -51,13 +51,13 @@ async def process_help_command(message: types.Message):
     await bot.send_document(message.from_user.id, document=document)
 
 
-@dp.message_handler(text='Night report')
+@dp.message_handler(text='Ночные отчеты')
 async def process_help_command(message: types.Message):
     document = open("Files/Отчеты.pdf", "rb")
     await bot.send_document(message.from_user.id, document=document)
 
 
-@dp.message_handler(text='Daily and pocket reports')
+@dp.message_handler(text='Daily and pocket отчеты')
 async def process_help_command(message: types.Message):
     document = open("Files/Daily, Pocket reports.pdf", "rb")
     await bot.send_document(message.from_user.id, document=document)
@@ -68,6 +68,15 @@ async def process_help_command(message: types.Message):
     document = open("Files/Аудит процесс.pdf", "rb")
     await bot.send_document(message.from_user.id, document=document)
 
+@dp.message_handler(text='Постим начисления')
+async def process_help_command(message: types.Message):
+    document = open("Files/Постим.pdf", "rb")
+    await bot.send_document(message.from_user.id, document=document)
+
+@dp.message_handler(text='Заселение')
+async def process_help_command(message: types.Message):
+    document = open("Files/Заселение.pdf", "rb")
+    await bot.send_document(message.from_user.id, document=document)
 
 @dp.message_handler(text='Профайлы')
 async def process_help_command(message: types.Message):
